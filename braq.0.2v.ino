@@ -2,9 +2,18 @@
 
 LiquidCrystal_I2C lcd(0x27,20,4);
 
-long a;
-long b;
-long result;
+int xc,
+ int xb1 = 5
+int yc1 = 1
+int yc2 = 0
+int xb2 = 8
+
+int speed = 500;
+//inverse relationship betwen val of speed int and speed in the game
+bool lose = false;// true = lose 
+long a;//frist n in the equation
+long b;// second n in the equation
+long result;//To display the result
 
 void setup() {
   
@@ -151,6 +160,56 @@ void loop() {
 
     lcd.print(result);
     Serial.println(result);
+
+  }
+  while(Serial.available()<0)
+  int r = Serial.read();
+  if(r == 2 ){
+   lcd.print("game of car");
+   Serial.pintln("game of car") 
+   lcd.clear();
+   lcd.setCursor(0,0 );
+   while(lose = false){
+    delay(speed)
+    xc++
+    xb1--
+    xb2-- 
+    if(r == w){
+      xy++
+    }
+if(r == s){
+      xy--
+    }
+  serial.println("connect lcd to play a game")
+  lcd.setCursor(xc,yc);
+  lcd.print("C")
+  lcd.clear();
+  lcd.setCursor(xb1,yb1);
+  lcd.print("T")
+  lcd.clear();
+  lcd.setCursor(xb2,yb2);
+  lcd.print("T")
+  lcd.clear();
+
+    if(xc == xb1|yc == yb1||xc == xb2|yc == yb2){
+    lose = true
+    xc = 0
+    yc = 0
+    xb1 = 5
+    yb1 = 0
+    xb2 = 18
+    yb2 = 1
+    lcd.setCursor(8,0 );
+    lcd.print("lose :(")
+    }
+   }
+   if(xc = 32,765|lose = false){
+   lcd.claer();
+   lcd.setCursor(8,0 );
+   lcd. print("!!win!!")
+   lcd.setCursor(8,1 );
+   lcd.print("prees Reset to play Another game")
+   }
   }
 }
-//i'll add a butons cntrol but now i am working an braq.0.5v
+//i'll add a butons cntrol soon, but now i am working an braq.0.5v
