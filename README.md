@@ -9,6 +9,9 @@ Before uploading Burraq, ensure you have the following:
 3.An LCD I2C (16x2).
 ## How do I install it on my controller?
 
+
+
+
 First, select the correct COM Port and your Board Type.
 Second, simply upload the code to your controller by clicking the Upload button.
 #How to control applications:
@@ -21,3 +24,4 @@ The system will prompt you for the required data by displaying the command on ei
 Game control is simply handled using the 'w' and 's' keys.
 
 "Pro Tip": Use Tera Term 5 for smoother game control. You can find it here: [https://github.com/TeraTermProject/teraterm/releases]
+https://github.com/user-attachments/assets/844bd07a-7165-43ab-a033-13715d716ec3
