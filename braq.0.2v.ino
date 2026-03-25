@@ -2,6 +2,9 @@
 
 LiquidCrystal_I2C lcd(0x27,20,4);
 
+
+byte pins = 9;
+
 int xc, yc; 
 int xb1 = 5;
 int yc1 = 1;
@@ -15,8 +18,28 @@ bool lose = false;// true = lose
 long a;//frist n in the equation
 long b;// second n in the equation
 long result;//To display the result
+ int n[11]; 
+ byte inputmode;
+int old_n;
+int new_n;
 
-void setup() {
+void setup() {  
+  
+ for (int i = 0; i < pins+1; i++){
+    pinMode(i,INPUT_PULLUP);
+    }  
+  
+  n1=digitalRead(1);
+  n2=digitalRead(2);
+  n3=digitalRead(3);
+  n4= digitalRead(4);
+  n5=digitalRead(5);
+  n6=digitalRead(6);
+  n7=digitalRead(7);
+  n8=digitalRead(8);
+  n9=digitalRead(9);
+  n10=digitalRead(10);
+
   
   lcd.init();
   lcd.backlight();
@@ -37,6 +60,7 @@ void setup() {
 
   delay(1000);
   lcd.clear();
+ 
 
   Serial.println(F("<<For any questions go to my githup and i'll answeryou>>"));
   delay(1000);
@@ -52,26 +76,49 @@ delay(1000);
 }
 
 void loop() {
+
+lcd.print("chose your cntrol");
+ lcd.print("1.seria\2.buttons");
+lcd.print("chose with button (1,2)");
+  if(n1 == 1||n2 == 0){
+  inputmode = 1;// Serial
+  }
+  else if(n2 == 1|| n1 == 0 ){
+inputmode= 0;//button
+
   
+  }
+  else if(Serial.available() <= 0){
+    if(Serial.Read() = 's'){
+      inputmode = 1;
+    }
+  }
+
+
+
   Serial.println(F("<_____________________________________________________>>"));  
   Serial.println(F("app list"));
   Serial.println(F("1.calculator"));
   Serial.println(F("2.car game(comeing soon....)"));
   lcd.clear();
   lcd.print("app list");
+  delay(1000);
+  lcd.clear();
   lcd.setCursor(0,1);
   lcd.print("1.calculator");
   lcd.setCursor(0,2);
   lcd.print("2.car game(comeing soon....)");
 
   while(Serial.available() <= 0){}
-
+   
   int s = Serial.read();
-
+switch(inputmode){
+case '1':
   if(s == '1'){
     
     lcd.clear();
-    lcd.print("calculator");
+    Serial.println(F("<______________________________________________________>>"));
+    lcd.print("calculator||serial");
            
     delay(750);
     lcd.clear();
@@ -164,7 +211,18 @@ void loop() {
     Serial.println(result);
 
   }
-
+  break;
+   
+   case'0' : 
+   lcd.claer();
+   Serial.println(F((<______________________________________________________>>)); 
+   Serial.println("calculator||buttons");
+   lcd.print("calculator||buttons");
+   delay(1000);
+   lcd.print("enter a (the nmp)");
+   Serial.println("enter a (the nmp)");
+   
+}
   if(s == '2'){
    lcd.clear();
    lcd.print("game of car");
@@ -213,4 +271,3 @@ void loop() {
    }
   }
 }
-//i'll add a butons cntrol soon, but now i am working an braq.0.5v
