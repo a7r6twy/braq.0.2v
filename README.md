@@ -19,7 +19,7 @@ Second, simply upload the code to your controller by clicking the Upload button.
 Control is very straightforward and is currently done via the Serial Monitor.
 The system will prompt you for the required data by displaying the command on either the Serial Monitor or the LCD screen.
 
-"Note": If you open the Serial Monitor, set the baud rate to 9600 and set the line ending option to No line ending.
+## "Note": If you open the Serial Monitor, set the baud rate to 9600 and set the line ending option to No line ending.
 ## General control is clear, but what about game controls?
 Game control is simply handled using the 'w' and 's' keys.
 
