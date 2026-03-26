@@ -25,3 +25,4 @@ Game control is simply handled using the 'w' and 's' keys.
 
 "Pro Tip": Use Tera Term 5 for smoother game control. You can find it here: [https://github.com/TeraTermProject/teraterm/releases]
 
+##Note: The code you see is an early, pre-alpha version. The project is still under development, and your feedback and improvements will greatly help in completing this simple project.
