@@ -14,7 +14,8 @@ Before uploading Burraq, ensure you have the following:
 
 First, select the correct COM Port and your Board Type.
 Second, simply upload the code to your controller by clicking the Upload button.
-#How to control applications:
+
+# How to control applications:
 
 Control is very straightforward and is currently done via the Serial Monitor.
 The system will prompt you for the required data by displaying the command on either the Serial Monitor or the LCD screen.
