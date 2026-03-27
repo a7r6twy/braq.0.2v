@@ -226,7 +226,8 @@ void setup() {
   n[9]=digitalRead(9);
   n[10]=digitalRead(10);
   n[11]=digitalRead(10);//
-  
+  // cat
+ 
   lcd.init();
   lcd.backlight();
 
