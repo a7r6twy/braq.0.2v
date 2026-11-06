@@ -77,29 +77,11 @@ delay(1000);
 
 void loop() {
 
-lcd.print("chose your cntrol");
- lcd.print("1.seria\2.buttons");
-lcd.print("chose with button (1,2)");
-  if(n1 == 1||n2 == 0){
-  inputmode = 1;// Serial
-  }
-  else if(n2 == 1|| n1 == 0 ){
-inputmode= 0;//button
-
-  
-  }
-  else if(Serial.available() <= 0){
-    if(Serial.Read() = 's'){
-      inputmode = 1;
-    }
-  }
-
-
 
   Serial.println(F("<_____________________________________________________>>"));  
   Serial.println(F("app list"));
   Serial.println(F("1.calculator"));
-  Serial.println(F("2.car game(comeing soon....)"));
+  Serial.println(F("2.car game"));
   lcd.clear();
   lcd.print("app list");
   delay(1000);
@@ -107,13 +89,11 @@ inputmode= 0;//button
   lcd.setCursor(0,1);
   lcd.print("1.calculator");
   lcd.setCursor(0,2);
-  lcd.print("2.car game(comeing soon....)");
+  lcd.print("2.car game");
 
   while(Serial.available() <= 0){}
    
   int s = Serial.read();
-switch(inputmode){
-case '1':
   if(s == '1'){
     
     lcd.clear();
@@ -212,17 +192,8 @@ case '1':
 
   }
   break;
-   
-   case'0' : 
-   lcd.claer();
-   Serial.println(F((<______________________________________________________>>)); 
-   Serial.println("calculator||buttons");
-   lcd.print("calculator||buttons");
-   delay(1000);
-   lcd.print("enter a (the nmp)");
-   Serial.println("enter a (the nmp)");
-   
 }
+
   if(s == '2'){
    lcd.clear();
    lcd.print("game of car");
